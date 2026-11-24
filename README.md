@@ -1,53 +1,57 @@
-# 👋 Hey, I'm Rajin!
+# Rajin Uddin, Portfolio
 
-🎯 **Junior DevOps & Full-Stack Developer** | Computer Science @ University of Guelph | Project Management Minor
+My personal site, built around a 3D retro computer you can type into.
 
-## 🚀 What I'm Building
+**Live:** [rajin-portfolio.vercel.app](https://rajin-portfolio.vercel.app)
 
-I'm obsessed with crafting **memory-safe, modular systems** that actually work in production. My repos tell the story of someone who ships real code, not just assignments.
+## What it does
 
-**Current Focus:**
-- 🔧 DevOps automation with Docker & CI/CD pipelines
-- 💻 Full-stack applications with modern tech stacks
-- 🗄️ Database architecture and cloud migrations
-- 🐍 Cross-language integration (C ↔ Python, Java ↔ Web)
+- **3D scene:** A Three.js model of a vintage computer, with a custom GLSL shader that gives its screen CRT scanlines and barrel distortion.
+- **Working terminal:** The screen runs a small shell over a virtual file system. Try `help`, `ls`, `cat`, `whoami`, `skills`, `open github` or `resume`.
+- **Standard sections:** Projects, about and contact are regular HTML beside the scene, so recruiters can skip the terminal.
+- **Fallbacks:** Devices without WebGL get a plain mobile layout, and the camera respects `prefers-reduced-motion`.
 
-## 💡 Recent Wins
+## Tech
 
-- **VCard Management System**: Engineered a C-based contact manager with <1% memory leakage (Valgrind-validated) + Python UI integration
-- **Investment Portfolio Manager**: Built a full-featured Java Swing app with 40% faster search using HashMap optimization
-- **Production Experience**: Currently shipping at Cross World Ltd - migrated MySQL to Azure, modernizing UIs, and automating workflows
+| Area | Choice |
+|---|---|
+| Language | TypeScript |
+| Build | Vite |
+| 3D | Three.js, GLSL shaders (`vite-plugin-glsl`) |
+| Hosting | Vercel |
 
-## 🛠️ My Stack
+The site sets strict security headers in `vercel.json`, including a Content Security Policy that only allows scripts and styles from its own origin.
 
-**Languages:** C/C++, Java, Python, JavaScript/TypeScript, SQL  
-**Frontend:** React, HTML5, CSS3, Tailwind CSS  
-**Backend:** Node.js, PHP, MySQL  
-**DevOps:** Docker, Git, GitHub Actions, Linux, Bash  
-**Cloud:** Microsoft Azure  
+## Run it locally
 
-## 🎯 Philosophy
+Requires Node.js 18 or newer.
 
-→ **Code > Diploma** - Your repos speak louder than your degree  
-→ **Quality > Quantity** - Every commit should add real value  
-→ **Ship It** - I build things that solve actual problems  
-→ **Daily Grind** - Consistent commits prove dedication  
+```bash
+git clone https://github.com/razinn70/Rajin-Portfolio.git
+cd Rajin-Portfolio
+npm install
+npm run dev
+```
 
-## 📊 By the Numbers
+`npm run build` type checks and builds to `dist/`. `npm run preview` serves that build.
 
-- 🏆 98% transaction accuracy handling $3K+ daily sales
-- 📈 40% performance boost through smart data structures  
-- 🎯 30+ leads generated weekly through systematic approaches
-- 📚 50+ students mentored in STEM subjects
+## Project layout
 
-## 🌟 What Sets Me Apart
+```
+src/
+  scene/      Three.js scene, camera and resize handling
+  computer/   3D computer model, screen renderer, CRT shader
+  shaders/    GLSL vertex and fragment shaders
+  terminal/   Shell, commands, history and virtual file system
+  ui/         Loading screen, navigation, project cards, about, contact
+  data/       Projects, skills, experience and personal details
+  styles/     CSS by section
+public/
+  resume/     Resume PDF served by the resume command
+```
 
-I don't just write code - I solve problems. From optimizing memory usage in C to designing scalable database schemas, I bring a **systems thinking** approach to every project. My background in teaching and project management means I write code that others can actually understand and maintain.
+To update content, edit the files in `src/data/`. The terminal and the page sections both read from them.
 
-**Looking for:** Internships, open-source collaborations, and opportunities to build something meaningful.
+## Contact
 
-📧 **muddinal@uoguelph.ca** | 🔗 **[LinkedIn](https://linkedin.com/in/rajin-uddin-202767218)**
-
----
-
-*"Your next job is hiding in those commits."* - Let's build something amazing together! 🚀
+[muddinal@uoguelph.ca](mailto:muddinal@uoguelph.ca) · [LinkedIn](https://linkedin.com/in/rajinu) · [GitHub](https://github.com/razinn70)
